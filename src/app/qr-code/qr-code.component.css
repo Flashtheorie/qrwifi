@@ -4,3 +4,17 @@
     margin: 0 auto;
   }
   
+
+  .created-by {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #000;
+    padding: 0.5rem;
+    @media print {
+      display: none;
+    }
+  }
+  
