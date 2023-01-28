@@ -1,0 +1,53 @@
+
+
+
+
+<form *ngIf="!showPrintView" (ngSubmit)="generateQRCode()" class="flex flex-col items-center" autocomplete="off">
+    <h1 class="text-gray-200 font-extrabold uppercase text-center text-6xl">Generate WiFi QR Code</h1>
+    <div class="form-group my-6 px-3">
+        <label for="name" class="text-gray-100 font-medium">WiFi Name</label>
+        <br>
+        <input autocomplete="off" type="text" [(ngModel)]="wifiName" name="wifiname" id="wifiname1456156" class="form-control border border-gray-400 rounded-md py-2 px-4 text-gray-700">
+    </div>
+    <div class="form-group my-3 px-3">
+        <label for="password" class="text-gray-100 font-medium">WiFi Password</label>
+        <br>
+        <input autocomplete="off" type="password" [(ngModel)]="wifiPassword" name="wifipassword45343456" id="4534553453" class="form-control border border-gray-400 rounded-md py-2 px-4 text-gray-700">
+    </div>
+    <button type="submit" class="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 my-3 mx-3 flex justify-center">Generate QR Code</button>
+    <button *ngIf="qrCode" (click)="printQRCode()" class="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 my-3 mx-3">Print QR Code</button>
+    <ngx-qrcode [value]="qrCode" class="custom-qrcode flex justify-center w-1/3"></ngx-qrcode>
+</form>
+
+  
+
+<div *ngIf="showPrintView" class="mt-12 flex flex-col">
+    <h1 class="mt-12 text-gray-200 font-extrabold uppercase text-center text-6xl">Welcome, traveller</h1>
+    <div class="text-center text-3xl mt-8 font-extrabold">Wifi name : </div>
+    <div class="text-center">{{wifiName}}</div>
+    <br>
+    <div class="text-center text-3xl font-extrabold">Wifi password : </div>
+    <div class="text-center">{{ wifiPassword }}</div>
+    <br><br>
+    <span class="text-center">or just scan me</span>
+    <ngx-qrcode [value]="qrCode" class="custom-qrcode flex justify-center w-1/3"></ngx-qrcode>
+</div>
+  
+<style>
+    @media print {
+      form {
+        display: none;
+      }
+    }
+  </style>
+  
+  
+  
+  
+  
+
+
+
+  
+  
+
