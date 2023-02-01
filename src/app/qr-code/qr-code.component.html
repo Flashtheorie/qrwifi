@@ -7,12 +7,12 @@
     <div class="form-group my-6 px-3">
         <label for="name" class="text-gray-100 font-medium">WiFi Name</label>
         <br>
-        <input autocomplete="off" type="text" [(ngModel)]="wifiName" name="wifiname" id="wifiname1456156" class="form-control border border-gray-400 rounded-md py-2 px-4 text-gray-700">
+        <input autocomplete="off" type="text" [(ngModel)]="wifiName" name="wifiname" id="wifiname" class="form-control border border-gray-400 rounded-md py-2 px-4 text-gray-700">
     </div>
     <div class="form-group my-3 px-3">
         <label for="password" class="text-gray-100 font-medium">WiFi Password</label>
         <br>
-        <input autocomplete="off" type="text" [(ngModel)]="wifiPassword" name="wifipassword45343456" id="4534553453" class="form-control border border-gray-400 rounded-md py-2 px-4 text-gray-700">
+        <input autocomplete="off" type="text" [(ngModel)]="wifiPassword" name="wifipassword" id="wifipassword" class="form-control border border-gray-400 rounded-md py-2 px-4 text-gray-700">
     </div>
     <button *ngIf="wifiName && wifiPassword" type="submit" class="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 my-3 mx-3 flex justify-center">Generate QR Code</button>
     <button *ngIf="qrCode" (click)="printQRCode()" class="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 my-3 mx-3">Print QR Code</button>
